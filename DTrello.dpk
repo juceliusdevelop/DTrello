@@ -1,0 +1,67 @@
+package DTrello;
+
+{$R *.res}
+{$R *.dres}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dbrtl,
+  CustomIPTransport,
+  bindengine,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  bindcomp,
+  RESTComponents,
+  IndyCore,
+  IndySystem,
+  IndyProtocols,
+  IndyIPClient,
+  IndyIPCommon;
+
+contains
+  trello.authenticator in 'core\trello.authenticator.pas',
+  trello.request in 'core\trello.request.pas',
+  trello.restclient in 'core\trello.restclient.pas',
+  trello.restrequest in 'core\trello.restrequest.pas',
+  trello.restresponse in 'core\trello.restresponse.pas',
+  trello.util in 'core\trello.util.pas',
+  trello.constants in 'core\trello.constants.pas',
+  trello.organizations in 'core\trello.organizations.pas',
+  trello.core in 'core\trello.core.pas',
+  dtrello.authenticator in 'authenticator\dtrello.authenticator.pas',
+  dtrello.organizations in 'organizations\dtrello.organizations.pas',
+  trello.boards in 'core\trello.boards.pas',
+  dtrello.boards in 'boards\dtrello.boards.pas',
+  trello.lists in 'core\trello.lists.pas',
+  dtrello.lists in 'lists\dtrello.lists.pas',
+  trello.cards in 'core\trello.cards.pas',
+  dtrello.cards in 'cards\dtrello.cards.pas';
+
+end.
